@@ -19,6 +19,9 @@
     />
     <title>FitFreak</title>
     <style>
+      a {
+        text-decoration: none;
+      }
       .ex-image img {
         width: 4rem;
         height: 4rem;
@@ -47,7 +50,6 @@
         color: white;
         font-size: 1.1rem;
       }
-
       .mid2-info span {
         margin-left: 5px;
         font-size: 1rem;
@@ -73,18 +75,35 @@
         <hr />
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="index.html" class="nav-link" aria-current="page">
-              Exersice
+            <a
+              href="index.html"
+              class="nav-link text-white"
+              aria-current="page"
+            >
+              <i
+                class="fa-solid fa-dumbbell"
+                style="color: #929da5; padding: 5px 5px 0 0"
+              ></i
+              >Exersice
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white"> Routines </a>
+            <a href="#" class="nav-link text-white"
+              ><i class="fa-solid fa-table-list" style="color: #929da5"></i>
+              Routines
+            </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white"> Calutators </a>
+            <a href="#" class="nav-link text-white">
+              <i class="fa-solid fa-calculator pe-2" style="color: #929da5"></i
+              >Calutators
+            </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white"> About Us </a>
+            <a href="#" class="nav-link text-white">
+              <i class="fa-solid fa-circle-info pe-2" style="color: #929da5"></i
+              >About Us
+            </a>
           </li>
         </ul>
         <hr />
@@ -116,7 +135,9 @@
         <div class="mid2 bg-dark m-3 rounded" style="height: 88%"></div>
       </div>
       <div class="sidebar position-fixed w-25 end-0" style="height: 95%">
-        <div class="side-main h-100 mt-3 mb-3 me-3 bg-dark rounded">
+        <div
+          class="side-main h-100 mt-3 mb-3 me-3 bg-dark rounded d-flex flex-column"
+        >
           <div
             class="side-title d-flex text-white p-2 fs-5 justify-content-between"
           >
