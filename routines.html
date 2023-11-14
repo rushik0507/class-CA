@@ -20,8 +20,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>FitFreak</title>
     <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
       a {
         text-decoration: none;
+      }
+      p {
+        margin: 0;
       }
       .main-mid2 {
         display: none;
@@ -32,12 +38,25 @@
         transition: max-height 0.75s ease-out;
         overflow: hidden;
       }
-      .list li {
+      li {
         marker: none;
       }
       .active {
         max-height: 300px;
         transition: max-height 0.75s ease-in;
+      }
+      ul {
+        list-style-type: none;
+        cursor: pointer;
+      }
+      .r-image {
+        width: 4rem;
+        height: 4rem;
+        padding: 0 5px 0 5px;
+      }
+      .r-image img {
+        width: 4rem;
+        height: 4rem;
       }
     </style>
   </head>
@@ -72,7 +91,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white"
+            <a href="./routines.html" class="nav-link text-white"
               ><i class="fa-solid fa-table-list" style="color: #929da5"></i>
               Routines
             </a>
@@ -99,21 +118,20 @@
         class="main-mid position-fixed top-0 h-100 bg-black"
         style="width: 60%; left: 15%"
       >
-        <div class="main-title text-white mt-2 ms-4 fs-3">Exercises</div>
+        <div class="main-title text-white mt-2 ms-4 fs-3">Routines</div>
         <div class="mid bg-dark m-3 rounded" style="height: 88%">
-          <div class="mid-title text-white p-2 fs-5">Select Muscle</div>
-          <div class="mid-image h-75 w-100 p-3">
-            <img
-              class="rounded w-100 h-100 img-fluid"
-              src="./assests/muscle map.jfif"
-              alt=""
-            />
+          <div class="mid-title text-white p-2 fs-5">Your Routine</div>
+          <div class="routine-title m-2 pt-2 pb-2 bg-black rounded">
+            <p class="m-0 text-white ps-2 fs-5">No Routine is selected</p>
           </div>
+          <div
+            class="routine-ex h-75 m-2 pt-2 pb-2 bg-black rounded overflow-scroll overflow-x-hidden"
+          ></div>
         </div>
       </div>
       <div class="sidebar position-fixed w-25 end-0" style="height: 95%">
         <div
-          class="side-main h-100 mt-3 mb-3 me-3 bg-dark rounded d-flex flex-column"
+          class="side-main h-100 mt-3 mb-3 me-3 bg-dark rounded d-flex flex-column overflow-scroll overflow-x-hidden"
         >
           <div
             class="side-title d-flex text-white p-2 fs-5 justify-content-between"
@@ -125,22 +143,34 @@
             id="menu"
           >
             <span>Classic 3 Day Split</span>
-            <ol class="list m-0" id="ddl">
-              <li>item</li>
-              <li>item</li>
-              <li>item</li>
-            </ol>
+            <ul class="list m-0 p-0" id="ddl">
+              <li class="m-1 bg-dark text-center rounded" id="l1">
+                Chest Shoulders and Triceps
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l2">
+                Back and Biceps
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l3">
+                Legs and Abs
+              </li>
+            </ul>
           </div>
           <div
             class="side-title d-flex flex-column text-white p-1 fs-5 justify-content-between menu bg-secondary m-2 rounded"
             id="menu1"
           >
             <span>Full Body Split</span>
-            <ol class="list m-0" id="ddl1">
-              <li>item</li>
-              <li>item</li>
-              <li>item</li>
-            </ol>
+            <ul class="list m-0 p-0" id="ddl1">
+              <li class="m-1 bg-dark text-center rounded" id="l4">
+                Full body 1
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l5">
+                Full body 2
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l6">
+                Full body 3
+              </li>
+            </ul>
           </div>
 
           <div
@@ -148,36 +178,55 @@
             id="menu2"
           >
             <span>Five Day Split</span>
-            <ol class="list m-0" id="ddl2">
-              <li>item</li>
-              <li>item</li>
-              <li>item</li>
-            </ol>
+            <ul class="list m-0 p-0" id="ddl2">
+              <li class="m-1 bg-dark text-center rounded" id="l7">
+                Chest Massacre
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l8">
+                Leg Shoulder Annihilation
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l9">
+                Triceps Crusher
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l10">
+                Beast bg-black
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l11">
+                Core Biceps Slayer
+              </li>
+            </ul>
           </div>
           <div
-            class="side-title d-flex text-white p-2 fs-5 justify-content-between"
+            class="side-title d-flex flex-column text-white p-1 fs-5 justify-content-between menu bg-secondary m-2 rounded"
+            id="menu3"
           >
             <span>Push and Pull</span>
+            <ul class="list m-0 p-0" id="ddl3">
+              <li class="m-1 bg-dark text-center rounded" id="l12">Push 1</li>
+              <li class="m-1 bg-dark text-center rounded" id="l13">Pull 1</li>
+              <li class="m-1 bg-dark text-center rounded" id="l14">Push 2</li>
+              <li class="m-1 bg-dark text-center rounded" id="l15">Pull 2</li>
+            </ul>
           </div>
           <div
-            class="side-title d-flex text-white p-2 fs-5 justify-content-between"
+            class="side-title d-flex flex-column text-white p-1 fs-5 justify-content-between menu bg-secondary m-2 rounded"
+            id="menu4"
           >
-            <span>Upper Lower</span>
-          </div>
-          <div
-            class="side-title d-flex text-white p-2 fs-5 justify-content-between"
-          >
-            <span>5 X 5</span>
-          </div>
-          <div
-            class="side-title d-flex text-white p-2 fs-5 justify-content-between"
-          >
-            <span>Only Dumbbells</span>
-          </div>
-          <div
-            class="side-title d-flex text-white p-2 fs-5 justify-content-between"
-          >
-            <span>No Equipments</span>
+            <span>No Equipement</span>
+            <ul class="list m-0 p-0" id="ddl4">
+              <li class="m-1 bg-dark text-center rounded" id="l16">
+                Home Workout
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l17">
+                Full body
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l18">
+                Upper(Bodyweight)
+              </li>
+              <li class="m-1 bg-dark text-center rounded" id="l19">
+                Lower(Bodyweight)
+              </li>
+            </ul>
           </div>
         </div>
       </div>
