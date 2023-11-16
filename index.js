@@ -12,9 +12,7 @@ const mid2 = document.querySelector(".mid2");
 fetch("./final.json")
   .then((response) => response.json())
   .then((d) => {
-    // You can access the fetched data here
     data = d;
-    // Do further processing with the data
   });
 
 function list() {
